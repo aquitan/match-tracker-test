@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+	--color-button: rgba(160, 17, 49, 1);
+	--color-button-active: rgba(235, 2, 55, 1);
+	--color-button-disabled: rgba(112, 19, 40, 1);
+	--color-error-bg: rgba(15, 19, 24, 1);
+	--card-gradient-odd: linear-gradient(90deg, rgba(15,19,24,1) 0%, rgba(10,14,18,1) 50%);
+}
+body {
+	background: #000;
+	color: #fff;
+	overflow-x: hidden !important;
+	font-family: 'Inter', sans-serif;
+}
+
+@font-face {
+  font-family: 'Tactic Sans';
+  src: url('/public/fonts/TacticSans-Bld.woff') format('woff');
+  font-weight: 400;
+}
+
+h1 {
+	font-family: 'Tactic Sans', sans-serif;
+}
+
