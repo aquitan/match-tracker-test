@@ -6,6 +6,7 @@
 	--color-button-disabled: rgba(112, 19, 40, 1);
 	--color-error-bg: rgba(15, 19, 24, 1);
 	--card-gradient-odd: linear-gradient(90deg, rgba(15,19,24,1) 0%, rgba(10,14,18,1) 50%);
+	--color-devider: #313A47;
 }
 body {
 	background: #000;

@@ -45,7 +45,7 @@ const Card = ({ match }: { match: Match }) => {
         <div className="flex flex-col md:flex-row justify-between w-full gap-8 mt-8">
           <div className="flex flex-col gap-2 w-full">
             <div className="flex gap-2">
-              <div className="flex flex-col md:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
+              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
                 <div className="flex flex-row items-center text-white text-md gap-2 flex-nowrap w-full">
                   <img
                     className="md:h-[32px] md:w-[32px]"
@@ -61,7 +61,7 @@ const Card = ({ match }: { match: Match }) => {
                   <span className="text-md">{homeTeam.players[0].kills}</span>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
+              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
                 <div className="flex items-center text-white text-md gap-2">
                   <img
                     className="md:h-[32px] md:w-[32px]"
@@ -81,7 +81,7 @@ const Card = ({ match }: { match: Match }) => {
                   </span>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
+              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
                 <div className="flex items-center text-white text-md gap-2 ">
                   <img
                     className="md:h-[32px] md:w-[32px]"
@@ -120,11 +120,32 @@ const Card = ({ match }: { match: Match }) => {
             </div>
           </div>
 
-          <div className='flex md:hidden'>VS</div>
+          <div
+            className="
+					flex
+					relative
+					items-center
+					justify-center
+					md:hidden
+					text-devider
+					before:h-[1px]
+					before:w-[40%]
+					before:left-0
+					before:bg-devider
+					before:absolute
+					after:h-[1px]
+					after:w-[40%]
+					after:right-0
+					after:bg-devider
+					after:absolute
+					"
+          >
+            <div className="overflow-hidden">VS</div>
+          </div>
 
           <div className="flex flex-col gap-2 w-full">
             <div className="flex gap-2">
-              <div className="flex flex-col md:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
+              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
                 <div className="flex items-center text-white text-md gap-2 ">
                   <img
                     className="md:h-[32px] md:w-[32px]"
@@ -140,7 +161,7 @@ const Card = ({ match }: { match: Match }) => {
                   <span className="text-md">{awayTeam.players[0].kills}</span>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
+              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
                 <div className="flex items-center text-white text-md gap-2 ">
                   <img
                     className="md:h-[32px] md:w-[32px]"
@@ -156,7 +177,7 @@ const Card = ({ match }: { match: Match }) => {
                   <span className="text-md">{awayTeam.players[1].kills}</span>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
+              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
                 <div className="flex items-center text-white text-md gap-2">
                   <img
                     className="md:h-[32px] md:w-[32px]"
