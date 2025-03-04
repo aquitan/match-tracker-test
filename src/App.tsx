@@ -19,8 +19,8 @@ function App() {
 		setIsError(false);
 		try {
 			const response = await axios.get(
-				"https://app.ftoyd.com/fronttemp-service/fronttemp"
-			);
+        `${import.meta.env.VITE_BASE_URL}/fronttemp`
+      );
 
 			setMatches(response.data.data.matches);
 			setIsLoading(false);

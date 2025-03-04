@@ -5,3 +5,4 @@ export { Card } from './Card';
 export { MatchStatus } from './MatchStatus';
 export { CardTeamDetails } from "./CardTeamDetails";
 export { CardDivider } from "./CardDivider";
+export { CardHeader } from "./CardHeader";
