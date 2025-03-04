@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import TeamIcon from '../assets/team-icon.svg';
 import { Match } from '../type/match_type';
-import { MatchStatus } from './MatchStatus';
-import UserAvatar from '../assets/avatar_global.svg';
-import ChevronDown from '../assets/chevron-down.svg';
+import { MatchStatus } from "./MatchStatus";
+import ChevronDown from "../assets/chevron-down.svg";
+import { CardTeamDetails } from "./CardTeamDetails";
+import { CardDivider } from "./CardDivider";
 
 const Card = ({ match }: { match: Match }) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
-	const { awayTeam, homeTeam } = match;
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { awayTeam, homeTeam } = match;
 
   return (
     <div
@@ -38,187 +39,21 @@ const Card = ({ match }: { match: Match }) => {
             src={TeamIcon}
             alt=""
           />
+          <div className="hidden md:flex items-center justify-center">
+            <img
+              className={`${isOpen ? "rotate-180" : "rotate-0"} w-8 h-8`}
+              src={ChevronDown}
+              alt=""
+            />
+          </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="flex flex-col md:flex-row justify-between w-full gap-8 mt-8">
-          <div className="flex flex-col gap-2 w-full">
-            <div className="flex gap-2">
-              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
-                <div className="flex flex-row items-center text-white text-md gap-2 flex-nowrap w-full">
-                  <img
-                    className="md:h-[32px] md:w-[32px]"
-                    src={UserAvatar}
-                    alt=""
-                  />
-                  <div className="text-sm md:text-md break-all">
-                    {homeTeam.players[0].username}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-md text-[#FAFAFA66]">Убийств:</span>{" "}
-                  <span className="text-md">{homeTeam.players[0].kills}</span>
-                </div>
-              </div>
-              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
-                <div className="flex items-center text-white text-md gap-2">
-                  <img
-                    className="md:h-[32px] md:w-[32px]"
-                    src={UserAvatar}
-                    alt=""
-                  />
-                  <div className="text-sm md:text-md break-all">
-                    {homeTeam.players[1].username}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm md:text-md text-[#FAFAFA66]">
-                    Убийств:
-                  </span>{" "}
-                  <span className="text-sm md:text-md break-all">
-                    {homeTeam.players[1].kills}
-                  </span>
-                </div>
-              </div>
-              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
-                <div className="flex items-center text-white text-md gap-2 ">
-                  <img
-                    className="md:h-[32px] md:w-[32px]"
-                    src={UserAvatar}
-                    alt=""
-                  />
-                  <div className="text-sm md:text-md break-all">
-                    {homeTeam.players[2].username}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-md text-[#FAFAFA66]">Убийств:</span>{" "}
-                  <span className="text-md">{homeTeam.players[2].kills}</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between md:justify-center bg-[#101318] px-3 py-2">
-              <div className="flex gap-2 max-w-[264px] justify-center w-full">
-                <div className="text-sm md:text-md text-[#FAFAFA66]">
-                  Points:{" "}
-                </div>
-                <div className="text-sm md:text-md">{homeTeam.points}</div>
-              </div>
-              <div className="flex gap-2 max-w-[264px] justify-center w-full">
-                <div className="text-sm md:text-md text-[#FAFAFA66]">
-                  Место:{" "}
-                </div>
-                <div className="text-md">{homeTeam.place}</div>
-              </div>
-              <div className="flex gap-2 max-w-[264px] justify-center w-full">
-                <div className="text-sm md:text-md text-[#FAFAFA66]">
-                  Всего убийств:{" "}
-                </div>
-                <div className="text-sm md:text-md">{homeTeam.total_kills}</div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="
-					flex
-					relative
-					items-center
-					justify-center
-					md:hidden
-					text-devider
-					before:h-[1px]
-					before:w-[40%]
-					before:left-0
-					before:bg-devider
-					before:absolute
-					after:h-[1px]
-					after:w-[40%]
-					after:right-0
-					after:bg-devider
-					after:absolute
-					"
-          >
-            <div className="overflow-hidden">VS</div>
-          </div>
-
-          <div className="flex flex-col gap-2 w-full">
-            <div className="flex gap-2">
-              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
-                <div className="flex items-center text-white text-md gap-2 ">
-                  <img
-                    className="md:h-[32px] md:w-[32px]"
-                    src={UserAvatar}
-                    alt=""
-                  />
-                  <div className="text-sm md:text-md break-all">
-                    {awayTeam.players[0].username}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-md text-[#FAFAFA66]">Убийств:</span>{" "}
-                  <span className="text-md">{awayTeam.players[0].kills}</span>
-                </div>
-              </div>
-              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
-                <div className="flex items-center text-white text-md gap-2 ">
-                  <img
-                    className="md:h-[32px] md:w-[32px]"
-                    src={UserAvatar}
-                    alt=""
-                  />
-                  <div className="text-sm md:text-md break-all">
-                    {awayTeam.players[1].username}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-md text-[#FAFAFA66]">Убийств:</span>{" "}
-                  <span className="text-md">{awayTeam.players[1].kills}</span>
-                </div>
-              </div>
-              <div className="flex flex-col xl:flex-row items-center gap-2 bg-[#101318] px-3 py-2 rounded-sm justify-between w-full">
-                <div className="flex items-center text-white text-md gap-2">
-                  <img
-                    className="md:h-[32px] md:w-[32px]"
-                    src={UserAvatar}
-                    alt=""
-                  />
-                  <div className="text-sm md:text-md break-all">
-                    {awayTeam.players[2].username}
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm md:text-md text-[#FAFAFA66]">
-                    Убийств:
-                  </span>{" "}
-                  <span className="text-sm md:text-md">
-                    {awayTeam.players[2].kills}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between md:justify-center bg-[#101318] px-3 py-2">
-              <div className="flex gap-2 max-w-[264px] justify-center w-full">
-                <div className="text-sm md:text-md text-[#FAFAFA66]">
-                  Points:{" "}
-                </div>
-                <div className="text-sm md:text-md">{awayTeam.points}</div>
-              </div>
-              <div className="flex gap-2 max-w-[264px] justify-center w-full">
-                <div className="text-sm md:text-md text-[#FAFAFA66]">
-                  Место:{" "}
-                </div>
-                <div className="text-sm md:text-md">{awayTeam.place}</div>
-              </div>
-              <div className="flex gap-2 max-w-[264px] justify-center w-full">
-                <div className="text-sm md:text-md text-[#FAFAFA66]">
-                  Всего убийств:{" "}
-                </div>
-                <div className="text-sm md:text-md">{awayTeam.total_kills}</div>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-col lg:flex-row justify-between w-full gap-8 mt-8">
+          <CardTeamDetails team={homeTeam} />
+          <CardDivider />
+          <CardTeamDetails team={awayTeam} />
         </div>
       )}
       <div className="flex md:hidden items-center justify-center w-full">

@@ -17,7 +17,7 @@ body {
 
 @font-face {
   font-family: 'Tactic Sans';
-  src: url('/public/fonts/TacticSans-Bld.woff') format('woff');
+  src: url('/src/assets/fonts/TacticSans-Bld.woff') format('woff');
   font-weight: 400;
 }
 
