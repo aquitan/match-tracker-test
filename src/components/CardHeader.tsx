@@ -1,6 +1,6 @@
 import { Match } from '../type/match_type';
 import TeamIcon from "../assets/team-icon.svg";
-import { MatchStatus } from './MatchStatus';
+import { MatchStatus } from "./matchStatus/MatchStatus";
 import ChevronDown from "../assets/chevron-down.svg";
 
 

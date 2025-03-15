@@ -1,4 +1,4 @@
-import RefreshIcon from '../assets/refresh.svg'
+import RefreshIcon from '../../assets/refresh.svg'
 
 const ReloadButton = ({ name, onPress, isLoading }: { name: string, isLoading: boolean, onPress: () => void}) => {
   return (

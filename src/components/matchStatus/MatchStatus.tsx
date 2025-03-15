@@ -14,7 +14,7 @@ const MatchStatus = ({type, }: {type: string}) => {
 
 	return (
     <div
-      className={`${matchType} text-center rounded-sm min-w-[70px] text-sm py-1 px-2 md:text-md md:min-w-[97px] md:py-1.5 md:px-5 flex items-center justify-center`}
+      className={`${matchType} max-w-fit text-center rounded-sm min-w-[70px] text-sm py-1 px-2 md:text-md md:min-w-[97px] md:py-1.5 md:px-5 flex items-center justify-center`}
     >
       {type === "Ongoing" && "Live"}
       {type === "Finished" && "Finished"}
